@@ -8,6 +8,8 @@ const initRouter = (app) => {
     router.post('/user/create-user', controller.handleCreateUserController)
     router.get('/user', controller.handleGetUserController)
     router.post('/delete/:id', controller.handleDeleteUserController)
+    router.get('/update/:id', controller.handleGetUserByIdController)
+    router.post('/update/user/:id', controller.handleUpdateUserByIdController)
 
     return app.use('/', router)
 }

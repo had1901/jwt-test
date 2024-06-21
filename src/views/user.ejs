@@ -32,7 +32,10 @@
                     <%= item.username %>
                   </td>
                   <td>
-                    <button  class="btn btn-warning">Edit</button>
+                    <form method="get" action="/update/<%= item.id %>">
+                      <button  class="btn btn-warning">Edit</button>
+                    </form>
+                   
                     <form method="post" action="/delete/<%= item.id %>">
                       <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
