@@ -1,11 +1,13 @@
-import express from 'express'
-import configViewEngine from './config/viewsEngine'
 require('dotenv').config()
+import express from 'express'
+const app = express()
+const PORT = process.env.PORT || 8888
+import bodyParser from 'body-parser'
+import configViewEngine from './config/viewsEngine'
 import initRouter from './routes/web'
 
-const PORT = process.env.PORT || 8888
-
-const app = express()
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // view engine 
 configViewEngine(app)
